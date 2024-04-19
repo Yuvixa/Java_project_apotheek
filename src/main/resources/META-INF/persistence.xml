@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="ventas" transaction-type="RESOURCE_LOCAL">
+			<!--	<class>	org.ciberfarma.model.Usuario</class> 	-->
+			<!-- configuración de propiedades -->
+			<properties>
+				<!-- MySQL -->
+	            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+	            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ciberfarmadawi?serverTimezone=UTC" />
+	            <property name="javax.persistence.jdbc.user" value="root" />
+	            <property name="javax.persistence.jdbc.password" value="root" />
+				<!-- Manejador Hibernate-->
+			  	<!-- <property name="hibernate.hbm2ddl.auto" value="create" /> --> 	<!--	create: crea automática la tabla, elementos,  datos.--> 
+			  																		<!--	usa sentencias ddl.	ddl permite manejar la estructura de tablas mas no os datos dento de ella--> 
+			  																		<!--	si ya tuviese una tabla en MySQL ya no usasaria el create, obviamente-->
+	            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />  <!--  sentencias son para MySQL--> 
+	            <property name="hibernate.show_sql" value="true" />  				<!-- 	muestra las sentencias -->         
+	      </properties>
+	</persistence-unit>
+</persistence>
